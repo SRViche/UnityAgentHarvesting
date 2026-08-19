@@ -145,24 +145,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 37281499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e50daec4ad2184abec85bf91bae558, type: 3}
+  m_Script: {fileID: 11500000, guid: eec63623f0d9f64a9b0dda6887d745d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FarmSim.UnityBridge.WorldController
-  harvesterCount: 3
-  tractorCount: 2
-  maxSteps: 500
-  stepInterval: 0.15
-  useTilemapFootprint: 1
-  manualRows: 20
-  manualCols: 20
-  tilemap: {fileID: 177072055}
-  emptyTile: {fileID: 11400000, guid: 4d20025c521075746931879fd393e495, type: 2}
-  cropTile: {fileID: 11400000, guid: 7feba00da001823429522d50d9652d78, type: 2}
-  obstacleTile: {fileID: 11400000, guid: cc85555799fa7834bb380b9219c733ec, type: 2}
-  harvestedTile: {fileID: 11400000, guid: 41f8197cf5f442a418e9af5a496cf1a0, type: 2}
-  collectionTile: {fileID: 11400000, guid: 318ae0c212b861743a12e27a9debed21, type: 2}
-  harvesterPrefab: {fileID: 5523718310765030521, guid: 2f1828f1a0ebeec47aaa5d52060e8b38, type: 3}
-  tractorPrefab: {fileID: 1673313242232035434, guid: b358f80ae3ef0d0409571719a09e5a61, type: 3}
+  worldController: {fileID: 1612442031}
+  tiempoTotalValue: {fileID: 386525055}
+  combustibleValue: {fileID: 706246395}
+  cultivosValue: {fileID: 1861610059}
+  distanciaValue: {fileID: 1194948386}
 --- !u!4 &37281501
 Transform:
   m_ObjectHideFlags: 0
@@ -15389,14 +15379,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 262081738}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acbc16a6ec7253e419772307f3f41363, type: 3}
+  m_Script: {fileID: 11500000, guid: eec63623f0d9f64a9b0dda6887d745d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FarmSim.UnityBridge.MetricsUI
-  worldController: {fileID: 37281500}
-  tiempoTotalValue: {fileID: 386525055}
-  combustibleValue: {fileID: 706246395}
-  cultivosValue: {fileID: 1861610059}
-  distanciaValue: {fileID: 1194948386}
+  worldController: {fileID: 1612442031}
+  tiempoTotalValue: {fileID: 0}
+  combustibleValue: {fileID: 0}
+  cultivosValue: {fileID: 0}
+  distanciaValue: {fileID: 0}
 --- !u!1 &355778453
 GameObject:
   m_ObjectHideFlags: 0
@@ -17344,6 +17334,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450174555}
   m_CullTransparentMesh: 1
+--- !u!1 &1612442030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1612442032}
+  - component: {fileID: 1612442031}
+  m_Layer: 0
+  m_Name: WorldController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1612442031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612442030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db9dceafc8695111a99ba41ea1d4086, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FarmSim.UnityBridge.WorldController
+  harvesterCount: 3
+  tractorCount: 2
+  maxSteps: 500
+  stepInterval: 0.15
+  useTilemapFootprint: 1
+  manualRows: 20
+  manualCols: 20
+  tilemap: {fileID: 177072055}
+  emptyTile: {fileID: 11400000, guid: 4d20025c521075746931879fd393e495, type: 2}
+  cropTile: {fileID: 11400000, guid: 6f98913b59c0be743aa2c08bf254971d, type: 2}
+  obstacleTile: {fileID: 11400000, guid: 162bebece0aa1a748bc446380fe4c93d, type: 2}
+  harvestedTile: {fileID: 11400000, guid: 41f8197cf5f442a418e9af5a496cf1a0, type: 2}
+  collectionTile: {fileID: 11400000, guid: 318ae0c212b861743a12e27a9debed21, type: 2}
+  harvesterPrefab: {fileID: 5523718310765030521, guid: 2f1828f1a0ebeec47aaa5d52060e8b38, type: 3}
+  tractorPrefab: {fileID: 1673313242232035434, guid: b358f80ae3ef0d0409571719a09e5a61, type: 3}
+--- !u!4 &1612442032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612442030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.257, y: -0.37697, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861610057
 GameObject:
   m_ObjectHideFlags: 0
@@ -17575,3 +17624,4 @@ SceneRoots:
   - {fileID: 426726648}
   - {fileID: 1248246911}
   - {fileID: 37281501}
+  - {fileID: 1612442032}
